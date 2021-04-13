@@ -44,7 +44,7 @@ class NoiseGenerator
         }
 
         $path = $this->config('path') ?? __DIR__.'/../images/';
-        $this->file = $path . $this->config('fileName', 'recent');
+        $this->file = $path . $this->config('fileName', 'recent') . '.png';
     }
 
     /**
@@ -52,10 +52,10 @@ class NoiseGenerator
      */
     public function loadConfig()
     {
-        try {
+        if(function_exists('config')) {
             $this->config = config('noise_generator');
-        } catch(\Exception $exception) {
-            $this->config = include_once __DIR__.'/../config/noise_generator.php';
+        } else {
+            $this->config = include __DIR__.'/../config/noise_generator.php';
         }
     }
 
@@ -93,7 +93,7 @@ class NoiseGenerator
      */
     public function width()
     {
-        return $this->getSizeValue(0);
+        return $this->getSizeValue(1);
     }
 
 
@@ -104,7 +104,7 @@ class NoiseGenerator
      */
     public function height()
     {
-        return $this->getSizeValue(1);
+        return $this->getSizeValue(2);
     }
 
     /**
