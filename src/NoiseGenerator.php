@@ -78,7 +78,7 @@ class NoiseGenerator
      */
     public function getSizeValue($xy)
     {
-        if($xy !== 0 || $xy !== 1) {
+        if($xy !== 0 && $xy !== 1) {
             return false;
         }
 
