@@ -82,7 +82,7 @@ class NoiseGenerator
             return false;
         }
 
-        preg_match_all('/(\d).(\d)/', $this->config['size'], $matches);
+        preg_match_all('/([0-9]+).([0-9]+)/', $this->config['size'], $matches);
         return (int) $matches[0][$xy];
     }
 
