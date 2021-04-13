@@ -74,16 +74,16 @@ class NoiseGenerator
     /**
      * Get width or height from size string
      *
-     * @param int $xy X or Y value (0 for X, 1 for Y)
+     * @param int $xy X or Y value (1 for X, 2 for Y)
      */
     public function getSizeValue($xy)
     {
-        if($xy !== 0 && $xy !== 1) {
+        if($xy !== 1 && $xy !== 2) {
             return false;
         }
 
-        preg_match_all('/([0-9]+).([0-9]+)/', $this->config['size'], $matches);
-        return (int) $matches[0][$xy];
+        preg_match('/([0-9]+).([0-9]+)/', $this->config['size'], $matches);
+        return (int) $matches[$xy];
     }
 
     /**
