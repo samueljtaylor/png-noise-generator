@@ -1,0 +1,26 @@
+{
+    "name": "samueljtaylor/png-noise-generator",
+    "description": "PHP package to generate a noise PNG image",
+    "require": {
+        "ext-gd": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Taylor",
+            "email": "sam@taylornetwork.ca"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SamuelJTaylor\\NoiseGenerator\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SamuelJTaylor\\NoiseGenerator\\ServiceProvider"
+            ]
+        }
+    }
+}
